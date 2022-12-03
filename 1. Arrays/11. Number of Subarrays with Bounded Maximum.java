@@ -26,7 +26,7 @@ class Solution {
 
 // Time - O(N) Way 1
 
-class Solution {
+class Solution2 {
     public int numSubarrayBoundedMax(int[] nums, int left, int right) {
         return count(nums, right) - count(nums, left - 1);
     }
@@ -46,7 +46,7 @@ class Solution {
 
 // Time - O(N) Way 2
 
-class Solution {
+class Solution3 {
     public int numSubarrayBoundedMax(int[] nums, int left, int right) {
         int i = 0, j = 0, count = 0, res = 0;
         
