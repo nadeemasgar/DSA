@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/maximum-product-of-three-numbers/
 
-public class Solution {
+class Solution {
     public int maximumProduct(int[] nums) {
         int min1 = Integer.MAX_VALUE, min2 = Integer.MAX_VALUE;
         int max1 = Integer.MIN_VALUE, max2 = Integer.MIN_VALUE, max3 = Integer.MIN_VALUE;
