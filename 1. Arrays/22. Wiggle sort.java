@@ -1,7 +1,29 @@
 // https://leetcode.com/problems/wiggle-sort/description/
 
+import java.util.Arrays;
+
 // Time - o(nLogn) space - o(n)
-class Solution {
+
+class Solution1 {
+    public void wiggleSort(int[] nums) {
+        Arrays.sort(nums);
+        if(nums.length <= 2) return;
+        int i = 1, j = i + 1;
+        while(j < nums.length) {
+            swap(nums, i, j);
+            i += 2;
+            j += 2;
+        }
+    }
+
+    public void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+}
+
+class Solution2 {
     public void wiggleSort(int[] nums) {
         int n = nums.length;
         if(n == 1) return;
@@ -28,7 +50,8 @@ class Solution {
 }
 
 // Time - o(n) space - o(1)
-class Solution {
+
+class Solution3 {
     public void wiggleSort(int[] nums) {
         int n = nums.length;
         for(int i = 0; i < n - 1; i++) {
