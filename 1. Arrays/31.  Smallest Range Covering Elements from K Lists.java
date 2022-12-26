@@ -2,7 +2,67 @@
 
 import java.util.*;
 
+// My Solution at time of Revision
+
 class Solution {
+    public class Pair {
+        int ele;
+        int idx;
+        int listIdx;
+
+        Pair(int ele, int idx, int listIdx) {
+            this.ele = ele;
+            this.idx = idx;
+            this.listIdx = listIdx;
+        }
+    }
+    public int[] smallestRange(List<List<Integer>> nums) {
+        PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> {
+            return a.ele - b.ele;
+        });
+
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        int[] range = new int[2];
+
+        for(int i = 0; i < nums.size(); i++) {
+            List<Integer> list = nums.get(i);
+            int ele = list.get(0);
+            pq.add(new Pair(ele, 0, i));
+
+            min = Math.min(min, ele);
+            max = Math.max(max, ele);
+            range[0] = min;
+            range[1] = max;
+        }
+
+        while(true) {
+            Pair rem = pq.remove();
+            int ele = rem.ele;
+            int idx = rem.idx;
+            int listIdx = rem.listIdx;
+
+            List<Integer> list = nums.get(listIdx);
+
+            if(max - ele < range[1] - range[0]) {
+                min = ele;
+                range[0] = min;
+                range[1] = max;
+            }
+
+            if(idx + 1 == list.size()) break;
+            
+            int nele = list.get(idx + 1);
+            pq.add(new Pair(nele, idx + 1, listIdx));
+
+            max = Math.max(max, nele);
+        }
+
+        return range;
+    }
+}
+
+class Solution2 {
     public int[] smallestRange(List<List<Integer>> nums) {
         int[] res = {-100000, 100000};
         int k = nums.size();
