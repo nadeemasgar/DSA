@@ -53,25 +53,14 @@ class Solution {
         }
         else {
             // solve according to odd count and even count of dots
-            int diff = j - i;
-            int mid = (i + j) / 2;
-            if(diff % 2 == 0) {
-                // odd dots
-                for(int k = i + 1; k < mid; k++) {
-                    arr[k] = 'R';
-                }
-                for(int k = mid + 1; k < j; k++) {
-                    arr[k] = 'L';
-                }
-            }
-            else {
-                // even dots
-                for(int k = i + 1; k <= mid; k++) {
-                    arr[k] = 'R';
-                }
-                for(int k = mid + 1; k < j; k++) {
-                    arr[k] = 'L';
-                }
+            int left = i + 1;
+            int right = j - 1;
+
+            while(left < right) {
+                arr[left] = 'R';
+                arr[right] = 'L';
+                left++;
+                right--;
             }
         }
     }

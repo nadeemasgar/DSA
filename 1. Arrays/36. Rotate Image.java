@@ -36,3 +36,20 @@ class Solution {
         }
     }
 }
+
+/********* Transpose Function  **********/
+
+public void transpose2(int[][] matrix) {
+    int n = matrix.length, m = matrix[0].length;
+    for(int i = 0; i < n; i++) {
+        for(int j = i + 1; j < m; j++)  {
+            swap(matrix, i, j);
+        }
+    }
+}
+
+public void swap(int[][] matrix, int i, int j) {
+    int temp = matrix[i][j];
+    matrix[i][j] = matrix[j][i];
+    matrix[j][i] = temp;
+}

@@ -38,7 +38,7 @@ class Solution {
 class Solution2 {
     public int findKthLargest(int[] nums, int k) {
         int n = nums.length;
-        // kth largest is (N - k)th smallest
+        // kth largest is (N - k)th smallest (k should be mentioned from 0th-Indexing)
         return quickSelect(nums, 0, nums.length - 1, n - k);
     }
 

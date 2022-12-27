@@ -12,7 +12,7 @@ class Solution {
         
         for(int i = 1; i < n; i++) {
             currmin = Math.min(arr[0] + k, arr[i] - k); // Minimum element when we add k to whole array
-            currmax = Math.max(arr[i - 1] + k, arr[n - 1] - k); // Maximum element when we subtract k from whole array
+            currmax = Math.max(arr[n - 1] - k, arr[i - 1] + k); // Maximum element when we subtract k from whole array
             
             ans = Math.min(ans, currmax - currmin);
         }
