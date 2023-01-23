@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+// https://practice.geeksforgeeks.org/problems/longest-distinct-characters-in-string5848/1
 
 // TC - O(n)
 // SC - O(n)
