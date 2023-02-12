@@ -12,7 +12,6 @@ class ListNode {
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
 
-
 class Solution {
     public ListNode deleteMiddle(ListNode head) {
         if(head == null || head.next == null) return null;
