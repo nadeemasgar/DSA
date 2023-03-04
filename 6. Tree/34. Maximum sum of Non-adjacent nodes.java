@@ -15,7 +15,7 @@ class Node
 }
 
 // TC - O(n) 
-// SC - O(n)
+// SC - O(h = logn)
 
 class Solution
 {

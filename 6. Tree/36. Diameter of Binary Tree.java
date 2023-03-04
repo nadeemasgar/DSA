@@ -15,7 +15,7 @@ class TreeNode {
 }
 
 // TC - O(n) 
-// SC - O(n)
+// SC - O(h = logn)
 
 class Solution {
     public int diameterOfBinaryTree(TreeNode root) {

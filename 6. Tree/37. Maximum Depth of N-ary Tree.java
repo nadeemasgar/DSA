@@ -19,6 +19,9 @@ class Node {
     }
 };
 
+// TC - O(n)
+// SC - O(h = logn)
+
 class Solution {
     public int maxDepth(Node node) {
         if(node == null) return 0;

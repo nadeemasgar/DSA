@@ -17,7 +17,7 @@ class TreeNode {
 }
 
 // TC - O(n) 
-// SC - O(n)
+// SC - O(h = logn)
 
 class Solution {
     int count = 0;
