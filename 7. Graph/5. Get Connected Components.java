@@ -1,7 +1,7 @@
 // https://www.pepcoding.com/resources/online-java-foundation/graphs/get_connected_components%20/topic
+// https://practice.geeksforgeeks.org/problems/number-of-provinces/1
 
 import java.io.*;
-
 import java.util.*;
 
 class Solution {
