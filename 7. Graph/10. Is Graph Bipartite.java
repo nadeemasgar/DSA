@@ -3,7 +3,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main {
+class Solution {
    static class Edge {
       int src;
       int nbr;
