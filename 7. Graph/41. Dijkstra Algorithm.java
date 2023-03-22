@@ -1,6 +1,7 @@
 // https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1
-// TC: O(V2)
-// SC: O(V2)
+
+// TC: O(E log V)
+// SC: O(V)
 
 import java.util.*;
 
