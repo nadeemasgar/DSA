@@ -29,7 +29,7 @@ class Solution {
 		    graph.get(u).add(new Pair(v, wt));
 		}
 		
-        // Find the Topo Sort
+		// Find the Topo Sort
         // O(N + M)
 		boolean[] vis = new boolean[N];
 		Stack<Integer> st = new Stack<>();
@@ -39,32 +39,30 @@ class Solution {
 		    }
 		}
 		
-        // Step 2 do the distance thing
+		// Step 2 do the distance thing
 		int[] dist = new int[N];
-		Arrays.fill(dist, Integer.MAX_VALUE);
+		Arrays.fill(dist, (int)1e9);
 		
 		dist[0] = 0;
-
+		
 		// O(N + M)
-		while(!st.isEmpty())
+		while(!st.isEmpty()) 
 		{
 		    int remVertex = st.pop();
-		    
-		    if(dist[remVertex] != Integer.MAX_VALUE) {
-		        
-		      for(Pair edge : graph.get(remVertex)){
-		          int nbr = edge.first;
-		          int wt = edge.second;
-		          
-		          if(dist[remVertex] + wt < dist[nbr] ){
-		            dist[nbr] = dist[remVertex] + wt;
-		          }
-		       }  
-		    }
+
+    	    for(Pair edge : graph.get(remVertex)){
+    	        int nbr = edge.first;
+    	        int wt = edge.second;
+    	          
+    	        if(dist[remVertex] + wt < dist[nbr] ){
+    	            dist[nbr] = dist[remVertex] + wt;
+    	        }
+    	   }  
+		  
 		}
 		
 		for(int i = 0; i < N; i++){
-		    if(dist[i] == Integer.MAX_VALUE)
+		    if(dist[i] == (int)1e9)
 		        dist[i] = -1;
 		}
 		

@@ -30,8 +30,8 @@ class Solution {
         while(!que.isEmpty()) {
             int remVertex = que.remove();
             for(int nbr : graph.get(remVertex)) {
-                if(dist[nbr] == Integer.MAX_VALUE) {
-                    dist[nbr] = Math.min(dist[nbr], dist[remVertex] + 1);
+                if(dist[remVertex] + 1 < dist[nbr]) {
+                    dist[nbr] = dist[remVertex] + 1;
                     que.add(nbr);
                 }
             }
