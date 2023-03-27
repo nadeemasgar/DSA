@@ -13,6 +13,8 @@ class Solution{
 			}
 		});
 		
+		// Arrays.sort(edges, (a, b) -> a[2] - b[2]); {Directly write this}
+
 		int ans = 0;
 		
 		DSU dsu = new DSU(V);
